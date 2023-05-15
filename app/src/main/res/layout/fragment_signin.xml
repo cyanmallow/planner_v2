@@ -4,45 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blue"
     tools:context=".fragments.SigninFragment">
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377">
-
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="385dp"
-            android:layout_height="53dp"
-            android:background="@color/white"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:hintEnabled="false">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEt"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="Nhập email">
-
-            </com.google.android.material.textfield.TextInputEditText>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
-
 
     <TextView
         android:id="@+id/textView"
@@ -60,9 +23,49 @@
         app:layout_constraintVertical_bias="0.176" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView1"
+        android:layout_width="408dp"
+        android:layout_height="88dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377">
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="380dp"
+            android:layout_height="53dp"
+            android:background="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEt"
+                android:layout_width="373dp"
+                android:layout_height="60dp"
+                android:hint="Nhập email">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView2"
-        android:layout_width="396dp"
-        android:layout_height="81dp"
+        android:layout_width="401dp"
+        android:layout_height="82dp"
         android:layout_marginBottom="280dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
@@ -120,6 +123,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.66" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="272dp"
+        android:layout_height="296dp"
+        android:src="@drawable/lovepik_a_small_blue_flower_png_image_400227418_wh1200_removebg_preview"
+        app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="221dp"
+        android:layout_height="249dp"
+        android:src="@drawable/png_clipart_blue_flowers_illustration_flower_blue_rose_blue_floral_blue_flower_arranging_removebg_preview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="616dp"
+        android:layout_marginEnd="206dp"
+ />
 
  />
 

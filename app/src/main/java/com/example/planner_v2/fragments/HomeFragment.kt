@@ -1,17 +1,26 @@
 package com.example.planner_v2.fragments
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.planner_v2.R
+import com.example.planner_v2.databinding.ConfirmDeleteBinding
 import com.example.planner_v2.databinding.FragmentHomeBinding
 import com.example.planner_v2.utils.ToDoAdapter
 import com.example.planner_v2.utils.ToDoData
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -60,10 +69,10 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
                 childFragmentManager,
                 AddTodoPopupFragment.TAG)
         }
-
         // dang xuat khoi game
-        binding.logout.setOnClickListener(){
-            FirebaseAuth.getInstance().signOut()
+        // chua hoat dong
+            binding.logout.setOnClickListener {
+                FirebaseAuth.getInstance().signOut()
         }
     }
 
@@ -81,7 +90,6 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         binding.mainRecyclerView.adapter = adapter
     }
 
-
     private fun getDataFromFirebase(){
         databaseRef.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot){
@@ -96,28 +104,25 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
                 }
                 adapter.notifyDataSetChanged()
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
             }
-
-
         })
     }
 
-
-    override fun onSaveTask(todoPopup: String, todo: TextInputEditText) {
+    override fun onSaveTask(todoPopup: String, todoEt: TextInputEditText) {
 
         databaseRef
             .push().setValue(todoPopup)
             .addOnCompleteListener(){
             if (it.isSuccessful){
                 Toast.makeText(context, "Lưu thành công!", Toast.LENGTH_SHORT).show()
-                todo.text = null
+
             } else {
                 Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
             }
-            //popupFragment.dismiss()
+                todoEt.text = null
+                popupFragment!!.dismiss()
         }
     }
 
@@ -127,18 +132,29 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         databaseRef.updateChildren(map).addOnCompleteListener{
             if (it.isSuccessful){
                 Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show()
-                todoEt.text = null
+
             } else {
                 Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
             }
+            todoEt.text = null
             popupFragment!!.dismiss()
         }
     }
 
-
-
-
+    // dialog hien ra man hinh confirm_delete
+    fun confirmDialog(){
+        context?.let {
+            MaterialAlertDialogBuilder(it)
+                .setTitle("Thong bao")
+                .setView(R.layout.confirm_delete)
+                .show()
+        }
+    }
+    // Confirm delete
+    //chua hoat dong, can them onButtonClick
     override fun onDeleteTaskBtnClicked(toDoData: ToDoData, position: Int) {
+        confirmDialog()
+
         databaseRef.child(toDoData.taskId).removeValue().addOnCompleteListener{
             if (it.isSuccessful){
                 Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show()
@@ -147,18 +163,20 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
             }
         }
     }
+//    override fun onDeleteTaskBtnClicked(toDoData: ToDoData, position: Int) {
+//        confirmDialog()
+//        binding.textView.setOnClickListener {
+//            databaseRef.child(toDoData.taskId).removeValue().addOnCompleteListener
+//            Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
     override fun onEditItemClicked(toDoData: ToDoData, position: Int) {
         if (popupFragment != null)
             childFragmentManager.beginTransaction().remove(popupFragment!!).commit()
-
-
         popupFragment = AddTodoPopupFragment.newInstance(toDoData.taskId, toDoData.task)
         popupFragment!!.setListener(this)
         popupFragment!!.show(childFragmentManager, AddTodoPopupFragment.TAG)
     }
-
-
-
 }
 

@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.firebase.database.ktx)
     implementation(libs.firebase.auth.ktx)
     implementation("com.android.support:support-annotations:28.0.0")
+    implementation("androidx.annotation:annotation:1.6.0")
 
 
 

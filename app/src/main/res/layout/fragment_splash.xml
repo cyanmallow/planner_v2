@@ -14,7 +14,7 @@
         android:layout_width="625dp"
         android:layout_height="961dp"
         android:src="@drawable/backg"
-        android:layout_marginTop="55dp"/>
+        android:layout_marginTop="65dp"/>
 
     <TextView
         android:id="@+id/HelloWorld"
@@ -24,6 +24,7 @@
         android:layout_marginTop="296dp"
         android:text="Todo App - Planner"
         android:textSize="40dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"

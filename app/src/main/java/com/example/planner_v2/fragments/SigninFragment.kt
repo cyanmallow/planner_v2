@@ -31,14 +31,9 @@ class SigninFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         init(view)
-        registerEvents()
-    }
 
-
-    private fun registerEvents(){
-        binding.textView.setOnClickListener {
+        binding.textViewSignUp.setOnClickListener {
             navControl.navigate(R.id.action_signinFragment_to_signupFragment)
         }
 
@@ -47,27 +42,24 @@ class SigninFragment : Fragment() {
             val pass = binding.passEt.text.toString().trim()
 
             if (email.isNotEmpty() && pass.isNotEmpty()){
-                auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(
-                    OnCompleteListener {
-                        if (it.isSuccessful){
-                            Toast.makeText(context, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
-                            navControl.navigate(R.id.action_signinFragment_to_homeFragment)
-                        } else {
-                            Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                )
+                loginUser(email, pass)
+            } else {
+                Toast.makeText(context, "Chưa điền đủ thông tin", Toast.LENGTH_SHORT).show()
             }
         }
+    }
 
-        // chuyen huong tu sign in sang sign up
-        binding.textViewSignUp.setOnClickListener(){
-            navControl.navigate(R.id.action_signinFragment_to_signupFragment)
+    private fun loginUser(email: String, pass: String){
+        auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener{
+            if (it.isSuccessful)
+                navControl.navigate(R.id.action_signinFragment_to_homeFragment)
+            else
+                Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
         }
     }
+
     private fun init(view: View){
         navControl = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()
     }
-
 }

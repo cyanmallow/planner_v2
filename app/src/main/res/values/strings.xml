@@ -5,4 +5,6 @@
     <string name="sign_up">Đăng ký</string>
     <string name="pass">Nhập mật khẩu</string>
     <string name="sign_in">Đăng nhập</string>
+    <color name="blue">#d6e9ff</color>
+    <color name="blue_nhung_dam_hon">#20f4ff</color>
 </resources>

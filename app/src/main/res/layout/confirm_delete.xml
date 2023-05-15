@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="@color/blue"
+tools:context=".fragments.AddTodoPopupFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/confirm"
+        android:layout_width="45dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/check_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toEndOf="@+id/cancel"
+        app:layout_constraintTop_toBottomOf="@+id/Confirm"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="43dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/x_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/confirm"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Confirm"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/Confirm"
+        android:layout_width="399dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="296dp"
+        android:gravity="center"
+        android:text="Bạn có chắc chắn muốn xóa?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

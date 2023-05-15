@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/blue"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.SignupFragment">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:text="@string/sign_up"
+        android:textColor="@color/black"
+
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView1"
@@ -14,7 +29,6 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -43,20 +57,7 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:text="@string/sign_up"
-        android:textColor="@color/black"
 
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView2"
@@ -76,7 +77,7 @@
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="385dp"
-            android:layout_height="46dp"
+            android:layout_height="53dp"
             android:background="@color/white"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
@@ -103,7 +104,7 @@
         android:id="@+id/nextBtn"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/baseline_navigate_next_24"
+        android:src="@drawable/right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.925"
@@ -124,14 +125,27 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="144dp"
-        android:layout_height="251dp"
-        android:src="@drawable/lich"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton2"
+        android:layout_width="251dp"
+        android:layout_height="312dp"
+        android:src="@drawable/lovepik_a_small_blue_flower_png_image_400227418_wh1200_removebg_preview"
+        app:layout_constraintBottom_toTopOf="@+id/nextBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.004" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="280dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="616dp"
+        android:layout_marginEnd="126dp"
+        android:src="@drawable/png_clipart_blue_flowers_illustration_flower_blue_rose_blue_floral_blue_flower_arranging_removebg_preview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
