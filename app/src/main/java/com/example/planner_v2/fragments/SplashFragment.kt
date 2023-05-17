@@ -3,10 +3,11 @@ package com.example.planner_v2.fragments
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.planner_v2.R
@@ -17,6 +18,18 @@ class SplashFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var navController: NavController
+
+    
+//    //hide toolbar
+//    override fun onResume() {
+//        super.onResume()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+//    }
 
 
     override fun onCreateView(

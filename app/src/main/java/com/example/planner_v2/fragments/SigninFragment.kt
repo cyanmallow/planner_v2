@@ -30,11 +30,14 @@ class SigninFragment : Fragment() {
         return binding.root
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init(view)
 
         binding.textViewSignUp.setOnClickListener {
+            Toast.makeText(context, "Chuyển đến đăng ký...", Toast.LENGTH_SHORT).show()
             navControl.navigate(R.id.action_signinFragment_to_signupFragment)
         }
 
@@ -64,6 +67,4 @@ class SigninFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
     }
 }
-class AppBar: AppCompatActivity(){
-    
-}
+class AppBar: AppCompatActivity()

@@ -23,13 +23,12 @@
         app:layout_constraintVertical_bias="0.176" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView1"
-        android:layout_width="408dp"
-        android:layout_height="88dp"
+        android:id="@+id/materialCardView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -38,17 +37,15 @@
         app:layout_constraintVertical_bias="0.377">
 
         <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="380dp"
+            android:layout_width="385dp"
             android:layout_height="53dp"
             android:background="@color/white"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             app:hintEnabled="false">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEt"
-                android:layout_width="373dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:hint="Nhập email">
 
@@ -63,23 +60,24 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView2"
+        android:id="@+id/materialCardView2"
         android:layout_width="401dp"
-        android:layout_height="82dp"
-        android:layout_marginBottom="280dp"
+        android:layout_height="81dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-
         app:cardUseCompatPadding="true"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView1"
+        app:layout_constraintVertical_bias="0.096">
 
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="385dp"
-            android:layout_height="46dp"
+            android:layout_height="53dp"
             android:background="@color/white"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
@@ -88,8 +86,8 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passEt"
                 android:layout_width="match_parent"
+                android:id="@+id/passEt"
                 android:inputType="textPassword"
                 android:layout_height="60dp"
                 android:hint="@string/pass">
@@ -102,15 +100,18 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+
     <ImageView
         android:id="@+id/nextBtn"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:src="@drawable/baseline_chevron_right_24"
-        app:layout_constraintEnd_toEndOf="@id/cardView2"
-        app:layout_constraintTop_toBottomOf="@id/cardView2" />
+        android:src="@drawable/right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.133"
+        app:layout_constraintEnd_toEndOf="@id/materialCardView2"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView2" />
 
     <TextView
         android:id="@+id/textViewSignUp"
@@ -147,7 +148,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="616dp"
-        android:layout_marginEnd="206dp"
+        android:layout_marginEnd="186dp"
  />
 
  />

@@ -19,6 +19,7 @@ import com.example.planner_v2.databinding.ConfirmDeleteBinding
 import com.example.planner_v2.databinding.FragmentHomeBinding
 import com.example.planner_v2.utils.ToDoAdapter
 import com.example.planner_v2.utils.ToDoData
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -48,8 +49,12 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
 
-        //return inflater.inflate(R.layout.fragment_home, container, false)
+
+//        binding.textViewSignin.setOnClickListener {
+//            navControl.navigate(R.id.action_signupFragment_to_signinFragment)
+//        }
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,10 +62,27 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         init(view)
         getDataFromFirebase()
         registerEvents()
+
+        // dang xuat
+        binding.logout.setOnClickListener {
+            auth.signOut()
+            Toast.makeText(context, "Đăng xuất...", Toast.LENGTH_SHORT).show()
+            navController.navigate(R.id.action_homeFragment_to_signinFragment)
+        }
     }
+    //phan nay la phan toolbar
+
+
+
+
+
+
+
+
+
     private fun registerEvents(){
         // nut addBtnHome
-        binding.addTaskBtn.setOnClickListener(){
+        binding.addTaskBtn.setOnClickListener {
             if (popupFragment != null)
                 childFragmentManager.beginTransaction().remove(popupFragment!!).commit()
             popupFragment = AddTodoPopupFragment()
@@ -71,9 +93,9 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         }
         // dang xuat khoi game
         // chua hoat dong
-            binding.logout.setOnClickListener {
-                FirebaseAuth.getInstance().signOut()
-        }
+//            binding.logout.setOnClickListener {
+//                FirebaseAuth.getInstance().signOut()
+//        }
     }
 
     private fun init(view: View){
@@ -114,7 +136,7 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
 
         databaseRef
             .push().setValue(todoPopup)
-            .addOnCompleteListener(){
+            .addOnCompleteListener {
             if (it.isSuccessful){
                 Toast.makeText(context, "Lưu thành công!", Toast.LENGTH_SHORT).show()
 
@@ -122,7 +144,7 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
                 Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
             }
                 todoEt.text = null
-                popupFragment!!.dismiss()
+                //popupFragment!!.dismiss()
         }
     }
 
@@ -132,11 +154,10 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         databaseRef.updateChildren(map).addOnCompleteListener{
             if (it.isSuccessful){
                 Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show()
-
             } else {
-                Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, it.exception!!.message, Toast.LENGTH_SHORT).show()
             }
-            todoEt.text = null
+            //todoEt.text = null
             popupFragment!!.dismiss()
         }
     }
@@ -163,13 +184,7 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
             }
         }
     }
-//    override fun onDeleteTaskBtnClicked(toDoData: ToDoData, position: Int) {
-//        confirmDialog()
-//        binding.textView.setOnClickListener {
-//            databaseRef.child(toDoData.taskId).removeValue().addOnCompleteListener
-//            Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show()
-//        }
-//    }
+
 
     override fun onEditItemClicked(toDoData: ToDoData, position: Int) {
         if (popupFragment != null)

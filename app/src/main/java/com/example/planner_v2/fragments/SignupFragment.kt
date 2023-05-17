@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.planner_v2.R
@@ -22,6 +23,20 @@ class SignupFragment : Fragment() {
     private lateinit var navControl: NavController
     private lateinit var binding: FragmentSignupBinding
 
+
+
+//    //hide toolbar
+//    override fun onResume() {
+//        super.onResume()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+//    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +50,8 @@ class SignupFragment : Fragment() {
 
         init(view)
 
-        binding.textView.setOnClickListener {
+        binding.textViewSignin.setOnClickListener {
+            Toast.makeText(context, "Chuyển đến đăng nhập...", Toast.LENGTH_SHORT).show()
             navControl.navigate(R.id.action_signupFragment_to_signinFragment)
         }
 

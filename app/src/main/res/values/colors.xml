@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hong">#FF009A</color>
+    <color name="hong_nhat">#FFB2E6</color>
+    <color name="lavendarblush">#FFF0F5</color>
+    <color name="vang">#FFFF99</color>
 </resources>
