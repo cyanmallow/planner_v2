@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.planner_v2.R
@@ -62,4 +63,7 @@ class SigninFragment : Fragment() {
         navControl = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()
     }
+}
+class AppBar: AppCompatActivity(){
+    
 }

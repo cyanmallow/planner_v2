@@ -65,14 +65,14 @@ class AddTodoPopupFragment : DialogFragment() {
                 if (toDoData == null){
                     listener.onSaveTask(todoTask, binding.todoEt)
                 } else {
-                    toDoData?.task = todoTask
+                    toDoData!!.task = todoTask
                     //
-                    listener.onUpdateTask(toDoData!!, binding.todoEt)
+                    listener?.onUpdateTask(toDoData!!, binding.todoEt)
                 }
             }
 
             // todo_Field
-            listener.onSaveTask(todoTask, binding.todoEt)
+            //listener.onSaveTask(todoTask, binding.todoEt)
 
         }
 

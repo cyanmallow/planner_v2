@@ -88,6 +88,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:id="@+id/passEt"
+                android:inputType="textPassword"
                 android:layout_height="60dp"
                 android:hint="@string/pass">
 

@@ -153,7 +153,7 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
     // Confirm delete
     //chua hoat dong, can them onButtonClick
     override fun onDeleteTaskBtnClicked(toDoData: ToDoData, position: Int) {
-        confirmDialog()
+        //confirmDialog()
 
         databaseRef.child(toDoData.taskId).removeValue().addOnCompleteListener{
             if (it.isSuccessful){

@@ -43,7 +43,7 @@ class SplashFragment : Fragment() {
             else
                 navController.navigate(R.id.action_splashFragment_to_signinFragment)
 
-        }, 900)
+        }, 1500)
     }
 
     private fun init(view: View) {
