@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/blue"
+    android:background="@color/da_nguoi_nhat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -127,9 +127,9 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="251dp"
-        android:layout_height="312dp"
-        android:src="@drawable/lovepik_a_small_blue_flower_png_image_400227418_wh1200_removebg_preview"
+        android:layout_width="193dp"
+        android:layout_height="245dp"
+        android:src="@drawable/pink_flower"
         app:layout_constraintBottom_toTopOf="@+id/nextBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -137,17 +137,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.004" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="280dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="616dp"
-        android:layout_marginEnd="126dp"
-        android:src="@drawable/png_clipart_blue_flowers_illustration_flower_blue_rose_blue_floral_blue_flower_arranging_removebg_preview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

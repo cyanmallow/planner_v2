@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="hong">#FF009A</color>
     <color name="hong_nhat">#FFB2E6</color>
+    <color name="da_nguoi">#EECBAD</color>
+    <color name="da_nguoi_nhat">#FFE4C4</color>
     <color name="lavendarblush">#FFF0F5</color>
     <color name="vang">#FFFF99</color>
 </resources>

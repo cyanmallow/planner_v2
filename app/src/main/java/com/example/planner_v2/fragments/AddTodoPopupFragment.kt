@@ -39,7 +39,7 @@ class AddTodoPopupFragment : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
         binding = FragmentAddTodoPopupBinding.inflate(inflater, container, false)
         return binding.root
@@ -60,21 +60,21 @@ class AddTodoPopupFragment : DialogFragment() {
     private fun registerEvents(){
         binding.todoNextBtn.setOnClickListener {
             val todoTask = binding.todoEt.text.toString()
+
             if (todoTask.isNotEmpty()){
                 if (toDoData == null){
-                    listener?.onSaveTask(todoTask, binding.todoEt)
+                    listener.onSaveTask(todoTask, binding.todoEt)
                 } else {
-                    toDoData!!.task = todoTask
+                    toDoData?.task = todoTask
                     //
-                    listener?.onUpdateTask(toDoData!!, binding.todoEt)
+                    listener.onUpdateTask(toDoData!!, binding.todoEt)
                 }
             }
         }
 
         //button to close the pop up
-        binding.todoClose.setOnClickListener {
-            dismiss()
-        }
+        //binding.todoClose.setO...
+        //dismiss()
     }
 
     interface DialogNextBtnClickListeners{

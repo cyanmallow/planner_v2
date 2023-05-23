@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_homeFragment_to_signinFragment"
             app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
@@ -76,6 +79,9 @@
         <action
             android:id="@+id/action_calendarFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_self"
+            app:destination="@id/calendarFragment" />
     </fragment>
     <fragment
         android:id="@+id/trackingFragment"
@@ -88,5 +94,8 @@
         <action
             android:id="@+id/action_trackingFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_trackingFragment_self"
+            app:destination="@id/trackingFragment" />
     </fragment>
 </navigation>
