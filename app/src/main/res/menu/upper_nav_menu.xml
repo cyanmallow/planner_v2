@@ -6,14 +6,11 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/baseline_favorite_24"
-        android:title="Home" />
+        android:title="Theme" />
 
-    <item
-        android:icon="@drawable/baseline_calendar_month_24"
-        android:title="Calendar" />
     <item
         android:id="@+id/trackingFragment"
         android:icon="@drawable/baseline_grade_24"
-        android:title="Tracking" />
+        android:title="Settings" />
 
 </menu>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/da_nguoi_nhat"
+    android:background="#eee7ec"
     tools:context=".fragments.SigninFragment">
 
     <TextView
@@ -12,57 +12,21 @@
         android:layout_width="157dp"
         android:layout_height="53dp"
         android:text="@string/sign_in"
-        android:textColor="@color/black"
+        android:textColor="#514239"
 
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView1"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="385dp"
-            android:layout_height="53dp"
-            android:background="@color/white"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:hintEnabled="false">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEt"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="Nhập email">
-
-            </com.google.android.material.textfield.TextInputEditText>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
-
-
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_width="401dp"
-        android:layout_height="81dp"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
@@ -70,14 +34,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView1"
-        app:layout_constraintVertical_bias="0.096">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            app:boxBackgroundColor="#e3dee6"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintEnabled="false">
 
-            android:layout_width="385dp"
-            android:layout_height="53dp"
-            android:background="@color/white"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEt"
+                android:layout_width="381dp"
+                android:layout_height="64dp"
+                android:hint="Nhập email"
+                tools:layout_editor_absoluteX="11dp"
+                tools:layout_editor_absoluteY="84dp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            app:boxBackgroundColor="#e3dee6"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             app:hintEnabled="false"
@@ -85,11 +90,12 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
                 android:id="@+id/passEt"
-                android:inputType="textPassword"
-                android:layout_height="60dp"
-                android:hint="@string/pass">
+                android:layout_width="384dp"
+                android:layout_height="64dp"
+                android:hint="@string/pass"
+                tools:layout_editor_absoluteX="11dp"
+                tools:layout_editor_absoluteY="84dp">
 
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -100,17 +106,17 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-    <ImageView
+    <Button
         android:id="@+id/nextBtn"
-        android:layout_width="60dp"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:src="@drawable/right"
+        android:text="Đăng nhập"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.133"
-        app:layout_constraintEnd_toEndOf="@id/materialCardView2"
-        app:layout_constraintTop_toBottomOf="@id/materialCardView2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655" />
 
     <TextView
         android:id="@+id/textViewSignUp"
@@ -123,34 +129,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.66" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="232dp"
-        android:layout_height="239dp"
-        android:src="@drawable/pink_flower"
-        app:layout_constraintBottom_toTopOf="@+id/nextBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
-
-
- />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.20" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.80" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

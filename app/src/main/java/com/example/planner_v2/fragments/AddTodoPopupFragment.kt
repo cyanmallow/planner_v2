@@ -1,13 +1,10 @@
 package com.example.planner_v2.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.example.planner_v2.R
 import com.example.planner_v2.databinding.FragmentAddTodoPopupBinding
 import com.example.planner_v2.utils.ToDoData
 import com.google.android.material.textfield.TextInputEditText
@@ -39,7 +36,7 @@ class AddTodoPopupFragment : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentAddTodoPopupBinding.inflate(inflater, container, false)
         return binding.root
@@ -54,10 +51,12 @@ class AddTodoPopupFragment : DialogFragment() {
 
             binding.todoEt.setText(toDoData?.taskId)
         }
-        registerEvents()
-    }
 
-    private fun registerEvents(){
+        binding.todoClose.setOnClickListener{
+            dismiss()
+        }
+
+
         binding.todoNextBtn.setOnClickListener {
             val todoTask = binding.todoEt.text.toString()
 
@@ -65,17 +64,13 @@ class AddTodoPopupFragment : DialogFragment() {
                 if (toDoData == null){
                     listener.onSaveTask(todoTask, binding.todoEt)
                 } else {
-                    toDoData?.task = todoTask
-                    //
+                    toDoData!!.task = todoTask
                     listener.onUpdateTask(toDoData!!, binding.todoEt)
                 }
             }
         }
-
-        //button to close the pop up
-        //binding.todoClose.setO...
-        //dismiss()
     }
+
 
     interface DialogNextBtnClickListeners{
         fun  onSaveTask( todo : String, todoEt : TextInputEditText)

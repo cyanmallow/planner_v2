@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -31,9 +30,9 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
     private lateinit var databaseRef: DatabaseReference
     private lateinit var navController: NavController
     private lateinit var binding: FragmentHomeBinding
-    private  var popupFragment: AddTodoPopupFragment? = null
+    private var popupFragment: AddTodoPopupFragment? = null
     private lateinit var adapter: ToDoAdapter
-    private lateinit var mList:MutableList<ToDoData>
+    private lateinit var mList: MutableList<ToDoData>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,26 +54,29 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
         registerEvents()
 
     }
-    private fun registerEvents(){
+
+    private fun registerEvents() {
         // nut addBtnHome
-        binding.addTaskBtn.setOnClickListener(){
+        binding.addTaskBtn.setOnClickListener {
             if (popupFragment != null)
                 childFragmentManager.beginTransaction().remove(popupFragment!!).commit()
             popupFragment = AddTodoPopupFragment()
             popupFragment!!.setListener(this)
             popupFragment!!.show(
                 childFragmentManager,
-                AddTodoPopupFragment.TAG)
+                TAG
+            )
         }
 
         // dang xuat khoi game
-        binding.logout.setOnClickListener(){
+        binding.logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             Toast.makeText(context, "Đăng xuất...", Toast.LENGTH_SHORT).show()
-            navController.navigate(com.example.planner_v2.R.id.action_homeFragment_to_signinFragment)        }
+            navController.navigate(R.id.action_homeFragment_to_signinFragment)
+        }
     }
 
-    private fun init(view: View){
+    private fun init(view: View) {
         navController = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()
         databaseRef = FirebaseDatabase.getInstance().reference
@@ -89,15 +91,15 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
     }
 
 
-    private fun getDataFromFirebase(){
-        databaseRef.addValueEventListener(object :ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot){
+    private fun getDataFromFirebase() {
+        databaseRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
                 mList.clear()
-                for (taskSnapshot in snapshot.children){
+                for (taskSnapshot in snapshot.children) {
                     val todoTask = taskSnapshot.key?.let {
-                        ToDoData(it , taskSnapshot.value.toString() )
+                        ToDoData(it, taskSnapshot.value.toString())
                     }
-                    if (todoTask != null){
+                    if (todoTask != null) {
                         mList.add(todoTask)
                     }
                 }
@@ -112,17 +114,13 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
     }
 
 
-
-
-
-    override fun onSaveTask(todoPopup: String, todo: TextInputEditText) {
-
+    override fun onSaveTask(todo: String, todoEt: TextInputEditText) {
         databaseRef
-            .push().setValue(todoPopup)
-            .addOnCompleteListener(){
-                if (it.isSuccessful){
+            .push().setValue(todo)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
                     Toast.makeText(context, "Lưu thành công!", Toast.LENGTH_SHORT).show()
-                    todo.text = null
+                    todoEt.text = null
                 } else {
                     Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
                 }
@@ -133,19 +131,19 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
     override fun onUpdateTask(toDoData: ToDoData, todoEt: TextInputEditText) {
         val map = HashMap<String, Any>()
         map[toDoData.taskId] = toDoData.task
-        databaseRef.updateChildren(map).addOnCompleteListener{
-            if (it.isSuccessful){
+        databaseRef.updateChildren(map).addOnCompleteListener {
+            if (it.isSuccessful) {
                 Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(context, it.exception.toString() , Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
         }
         popupFragment!!.dismiss()
     }
 
     override fun onDeleteTaskBtnClicked(toDoData: ToDoData, position: Int) {
-        databaseRef.child(toDoData.taskId).removeValue().addOnCompleteListener{
-            if (it.isSuccessful){
+        databaseRef.child(toDoData.taskId).removeValue().addOnCompleteListener {
+            if (it.isSuccessful) {
                 Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT).show()
@@ -158,9 +156,8 @@ class HomeFragment : Fragment(), AddTodoPopupFragment.DialogNextBtnClickListener
             childFragmentManager.beginTransaction().remove(popupFragment!!).commit()
 
 
-        popupFragment = AddTodoPopupFragment.newInstance(toDoData.taskId, toDoData.task)
+        popupFragment = AddTodoPopupFragment.newInstance(toDoData.task, toDoData.task)
         popupFragment!!.setListener(this)
-        popupFragment!!.show(childFragmentManager, AddTodoPopupFragment.TAG)
+        popupFragment!!.show(childFragmentManager, TAG)
     }
 }
-

@@ -5,42 +5,32 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment"
-    android:background="@color/lavendarblush">
+    android:outlineSpotShadowColor="#403344"
+    android:background="#3e3d51">
 
 
-    <ImageView
+    <Button
         android:id="@+id/addTaskBtn"
-        android:layout_width="61dp"
-        android:layout_height="57dp"
-        android:src="@drawable/add_24"
+        android:layout_width="103dp"
+        android:layout_height="54dp"
+        android:text="Thêm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
+        app:layout_constraintVertical_bias="0.881"
+        android:textColor="#f2dced"/>
 
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="61dp"
-        android:layout_height="57dp"
-        android:src="@drawable/baseline_keyboard_arrow_left_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/hong"
-        android:outlineAmbientShadowColor="@color/white"
-        android:outlineSpotShadowColor="@color/white"
-        app:itemRippleColor="@color/white"
-        app:itemTextColor="@color/white"
+        android:background="#c2b4c5"
+        app:itemRippleColor="#f2dced"
+        app:itemTextColor="#6e48c6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,61 +38,24 @@
         app:menu="@menu/bottom_nav_menu">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <!--    <ImageView-->
-<!--        android:id="@+id/cheathack_home"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:src="@drawable/home_cheat"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/Home"-->
-<!--        android:layout_width="136dp"-->
-<!--        android:layout_height="81dp"-->
-<!--        android:src="@drawable/images_removebg_preview"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/Calendar"-->
-<!--        android:layout_width="136dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:src="@drawable/images_removebg_preview"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/Tracking"-->
-<!--        android:layout_width="136dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:src="@drawable/images_removebg_preview"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainRecyclerView"
-        android:layout_width="342dp"
-        android:layout_height="487dp"
+        android:layout_width="338dp"
+        android:layout_height="518dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/hong"
+        android:background="#c2b4c5"
         android:outlineAmbientShadowColor="@color/white"
         android:outlineSpotShadowColor="@color/white"
         app:itemRippleColor="@color/white"
@@ -113,6 +66,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/upper_nav_menu" />
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="48dp"
+        android:layout_height="51dp"
+        android:src="@drawable/baseline_keyboard_arrow_left_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,65 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1062192403387:android:60b653855cf4231fafaa9e",
-        "android_client_info": {
-          "package_name": "com.example.drawer"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1062192403387-1d3a83fd1vu3lje611378n0jhmkr2fp0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBgsjVDj1MbPTKsGCECUVwIHRiSYQ9NH7w"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1062192403387-1d3a83fd1vu3lje611378n0jhmkr2fp0.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1062192403387:android:c3ae42fa48d084e6afaa9e",
-        "android_client_info": {
-          "package_name": "com.example.planner"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1062192403387-1d3a83fd1vu3lje611378n0jhmkr2fp0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBgsjVDj1MbPTKsGCECUVwIHRiSYQ9NH7w"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1062192403387-1d3a83fd1vu3lje611378n0jhmkr2fp0.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1062192403387:android:e9a26cc6de0d1390afaa9e",
+        "mobilesdk_app_id": "1:1062192403387:android:7c1144ff52806b1cafaa9e",
         "android_client_info": {
           "package_name": "com.example.planner_v2"
         }

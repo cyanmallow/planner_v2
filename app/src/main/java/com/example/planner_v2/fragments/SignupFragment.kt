@@ -1,40 +1,22 @@
 package com.example.planner_v2.fragments
 
 import android.os.Bundle
-import android.view.AttachedSurfaceControl
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.planner_v2.R
 import com.example.planner_v2.databinding.FragmentSignupBinding
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
-import com.example.planner_v2.databinding.FragmentSignupBinding.bind as bind1
 
 
 class SignupFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var navControl: NavController
     private lateinit var binding: FragmentSignupBinding
-
-
-
-//    //hide toolbar
-//    override fun onResume() {
-//        super.onResume()
-//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-//    }
-//
-//    override fun onStop() {
-//        super.onStop()
-//        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-//    }
 
 
     override fun onCreateView(
